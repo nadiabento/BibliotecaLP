@@ -1,0 +1,10 @@
+package com.UtilsLibrary;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Conversão de Tempo: " + Conversor.converterTempo(150, "h", "min") + " min");
+        System.out.println("Conversão de Velocidade: " + Conversor.converterVelocidade(100, "km/h", "m/s") + " m/s");
+        System.out.println("Conversão de Área: " + Conversor.converterArea(1, "ha", "m²") + " m²");
+    
+    }
+}
