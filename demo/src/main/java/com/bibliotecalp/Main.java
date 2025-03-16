@@ -14,7 +14,7 @@ public class Main {
         System.out.println("25°C em Kelvin é: " + temp4 + "K");
 
        
-        // conversão entre medidas 
+        // conversão entre medidas de distancia
         double distan1 = ConversorDistancia.converterDistancia(1, "KM", "M");
         double distan2 = ConversorDistancia.converterDistancia(1, "MI", "KM");
         double distan3 = ConversorDistancia.converterDistancia(100, "YD", "M");
