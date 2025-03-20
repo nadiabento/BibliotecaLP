@@ -1,17 +1,19 @@
 package com.UtilsLibrary;
 
 public class ConversorTemperatura {
-    private double valor;
-    private String unidadeOrigem;
-    private String unidadeDestino;
-
-    public ConversorTemperatura(double valor, String unidadeOrigem, String unidadeDestino) {
-        this.valor = valor;
-        this.unidadeOrigem = unidadeOrigem;
-        this.unidadeDestino = unidadeDestino;
-    }
-
+    
     public static double converter(double valor, String unidadeOrigem, String unidadeDestino) {
+        
+        // verificações para evitar erros
+        if (unidadeOrigem == null || unidadeDestino == null) {
+            throw new IllegalArgumentException("As unidades de origem e destino não podem ser nulas.");
+        }
+
+        // Padronizar as unidades de temperatura, para facilitar a leitura
+        unidadeOrigem = unidadeOrigem.toUpperCase().trim();
+        unidadeDestino = unidadeDestino.toUpperCase().trim();
+
+
         if (unidadeOrigem.equals(unidadeDestino)) {
             return valor; // Se a origem e destino forem iguais, retorna o mesmo valor
         }
@@ -20,29 +22,24 @@ public class ConversorTemperatura {
 
         // Converter para Celsius primeiro
         switch (unidadeOrigem) {
-            case "FAHRENHEIT":
-                valorEmCelsius = (valor - 32) * 5 / 9;
-                break;
-            case "KELVIN":
-                valorEmCelsius = valor - 273.15;
-                break;
-            case "CELSIUS":
-                valorEmCelsius = valor;
-                break;
-            default:
-                throw new IllegalArgumentException("Unidade de origem inválida: " + unidadeOrigem);
+            case "FAHRENHEIT" -> valorEmCelsius = (valor - 32) * 5 / 9;
+            case "KELVIN" -> valorEmCelsius = valor - 273.15;
+            case "CELSIUS" -> valorEmCelsius = valor;
+            default -> throw new IllegalArgumentException("Unidade de origem inválida: " + unidadeOrigem);
         }
 
         // Converter de Celsius para a unidade de destino
         switch (unidadeDestino) {
-            case "FAHRENHEIT":
+            case "FAHRENHEIT" -> {
                 return (valorEmCelsius * 9 / 5) + 32;
-            case "KELVIN":
+            }
+            case "KELVIN" -> {
                 return valorEmCelsius + 273.15;
-            case "CELSIUS":
+            }
+            case "CELSIUS" -> {
                 return valorEmCelsius;
-            default:
-                throw new IllegalArgumentException("Unidade de destino inválida: " + unidadeDestino);
+            }
+            default -> throw new IllegalArgumentException("Unidade de destino inválida: " + unidadeDestino);
         }
     }
 }
