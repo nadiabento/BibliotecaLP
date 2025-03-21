@@ -83,9 +83,9 @@ public class Main {
         System.out.print("Digite o valor da temperatura: ");
         double valor = scanner.nextDouble();
         scanner.nextLine();
-        System.out.print("Digite a unidade de origem (CELSIUS, FAHRENHEIT, KELVIN): ");
+        System.out.print("Digite a unidade de origem (C, F, K): ");
         String unidadeOrigem = scanner.nextLine().toUpperCase().trim();
-        System.out.print("Digite a unidade de destino (CELSIUS, FAHRENHEIT, KELVIN): ");
+        System.out.print("Digite a unidade de destino (C, F, K): ");
         String unidadeDestino = scanner.nextLine().toUpperCase().trim();
         System.out.println("Resultado: " + ConversorTemperatura.converter(valor, unidadeOrigem, unidadeDestino) + " " + unidadeDestino);
     }
