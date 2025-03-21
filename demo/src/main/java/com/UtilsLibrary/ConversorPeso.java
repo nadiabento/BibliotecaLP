@@ -1,5 +1,4 @@
-package com.bibliotecalp;
-
+package com.UtilsLibrary;
 
 public class ConversorPeso {
 
@@ -15,34 +14,28 @@ public class ConversorPeso {
 
         // Converter para gramas primeiro
         switch (unidadeOrigem) {
-            case "G":
-                valorEmGramas = valor;
-                break;
-            case "KG":
-                valorEmGramas = valor * 1000;
-                break;
-            case "LB":
-                valorEmGramas = valor * 453.592;
-                break;
-            case "OZ":
-                valorEmGramas = valor * 28.3495;
-                break;
-            default:
-                throw new IllegalArgumentException("Unidade de origem inválida: " + unidadeOrigem);
+            case "G" -> valorEmGramas = valor;
+            case "KG" -> valorEmGramas = valor * 1000;
+            case "LB" -> valorEmGramas = valor * 453.592;
+            case "OZ" -> valorEmGramas = valor * 28.3495;
+            default -> throw new IllegalArgumentException("Unidade de origem inválida: " + unidadeOrigem);
         }
 
         // Converter de gramas para a unidade de destino
         switch (unidadeDestino) {
-            case "G":
+            case "G" -> {
                 return valorEmGramas;
-            case "KG":
+            }
+            case "KG" -> {
                 return valorEmGramas / 1000;
-            case "LB":
+            }
+            case "LB" -> {
                 return valorEmGramas / 453.592;
-            case "OZ":
+            }
+            case "OZ" -> {
                 return valorEmGramas / 28.3495;
-            default:
-                throw new IllegalArgumentException("Unidade de destino inválida: " + unidadeDestino);
+            }
+            default -> throw new IllegalArgumentException("Unidade de destino inválida: " + unidadeDestino);
         }
     }
 }

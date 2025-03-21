@@ -1,4 +1,4 @@
-package com.bibliotecalp;
+package com.UtilsLibrary;
 
 public class ConversorDistancia {
 
@@ -14,34 +14,28 @@ public class ConversorDistancia {
 
         // Converter para metros primeiro
         switch (unidadeOrigem) {
-            case "KM":
-                valorEmMetros = valor * 1000;
-                break;
-            case "MI":
-                valorEmMetros = valor * 1609.34;
-                break;
-            case "YD":
-                valorEmMetros = valor * 0.9144;
-                break;
-            case "M":
-                valorEmMetros = valor;
-                break;
-            default:
-                throw new IllegalArgumentException("Unidade de origem inválida: " + unidadeOrigem);
+            case "KM" -> valorEmMetros = valor * 1000;
+            case "MI" -> valorEmMetros = valor * 1609.34;
+            case "YD" -> valorEmMetros = valor * 0.9144;
+            case "M" -> valorEmMetros = valor;
+            default -> throw new IllegalArgumentException("Unidade de origem inválida: " + unidadeOrigem);
         }
 
         // Converter de metros para unidade de destino
         switch (unidadeDestino) {
-            case "KM":
+            case "KM" -> {
                 return valorEmMetros / 1000;
-            case "MI":
+            }
+            case "MI" -> {
                 return valorEmMetros / 1609.34;
-            case "YD":
+            }
+            case "YD" -> {
                 return valorEmMetros / 0.9144;
-            case "M":
+            }
+            case "M" -> {
                 return valorEmMetros;
-            default:
-                throw new IllegalArgumentException("Unidade de destino inválida: " + unidadeDestino);
+            }
+            default -> throw new IllegalArgumentException("Unidade de destino inválida: " + unidadeDestino);
         }
     }
 }
