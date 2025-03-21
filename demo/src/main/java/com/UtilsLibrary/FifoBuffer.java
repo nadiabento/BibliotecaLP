@@ -5,7 +5,7 @@ import java.util.List;
 
 // Classe para representar uma fila (FIFO - Primeiro a entrar, primeiro a sair)
 public class FifoBuffer<T> {
-    private List<T> fila; // Lista para armazenar os elementos
+    private final List<T> fila; // Lista para armazenar os elementos
 
     // Construtor
     public FifoBuffer() {

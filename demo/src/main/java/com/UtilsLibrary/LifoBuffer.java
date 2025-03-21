@@ -5,7 +5,7 @@ import java.util.List;
 
 // Classe para representar uma pilha (LIFO - Último a entrar, primeiro a sair)
 public class LifoBuffer<T> {
-    private List<T> pilha; // Lista para armazenar os elementos
+    private final List<T> pilha; // Lista para armazenar os elementos
 
     // Construtor
     public LifoBuffer() {

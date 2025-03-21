@@ -7,6 +7,7 @@ public class Main {
             System.out.println("Conversão de Velocidade: " + Conversor.converterVelocidade(100, "km/h", "m/s") + " m/s");
             System.out.println("Conversão de Área: " + Conversor.converterArea(1, "ha", "m²") + " m²");
         
+      
         // Testando FIFO
         System.out.println("\n=== Teste FIFO ===");
         FifoBuffer<Integer> fila = new FifoBuffer<>();
@@ -29,6 +30,6 @@ public class Main {
         
         } catch (UnidadeInvalidaException e) {
             System.err.println("Erro: " + e.getMessage());
-        }
     }
+}
 }
