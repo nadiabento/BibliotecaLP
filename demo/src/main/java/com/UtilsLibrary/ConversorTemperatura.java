@@ -22,21 +22,21 @@ public class ConversorTemperatura {
 
         // Converter para Celsius primeiro
         switch (unidadeOrigem) {
-            case "FAHRENHEIT" -> valorEmCelsius = (valor - 32) * 5 / 9;
-            case "KELVIN" -> valorEmCelsius = valor - 273.15;
-            case "CELSIUS" -> valorEmCelsius = valor;
+            case "F" -> valorEmCelsius = (valor - 32) * 5 / 9;
+            case "K" -> valorEmCelsius = valor - 273.15;
+            case "C" -> valorEmCelsius = valor;
             default -> throw new IllegalArgumentException("Unidade de origem inválida: " + unidadeOrigem);
         }
 
         // Converter de Celsius para a unidade de destino
         switch (unidadeDestino) {
-            case "FAHRENHEIT" -> {
+            case "F" -> {
                 return (valorEmCelsius * 9 / 5) + 32;
             }
-            case "KELVIN" -> {
+            case "K" -> {
                 return valorEmCelsius + 273.15;
             }
-            case "CELSIUS" -> {
+            case "C" -> {
                 return valorEmCelsius;
             }
             default -> throw new IllegalArgumentException("Unidade de destino inválida: " + unidadeDestino);

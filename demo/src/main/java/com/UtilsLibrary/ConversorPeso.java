@@ -3,6 +3,8 @@ package com.UtilsLibrary;
 public class ConversorPeso {
 
     public static double converterPeso(double valor, String unidadeOrigem, String unidadeDestino) {
+        
+        // Padronizar as unidades de temperatura, para facilitar a leitura
         unidadeOrigem = unidadeOrigem.toUpperCase();
         unidadeDestino = unidadeDestino.toUpperCase();
 
