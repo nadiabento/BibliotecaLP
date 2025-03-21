@@ -46,9 +46,9 @@ public class Main {
                     System.out.print("Digite o valor da velocidade: ");
                     double velocidade = scanner.nextDouble();
                     scanner.nextLine();
-                    System.out.print("Digite a unidade de origem (km/h, m/s, mph): ");
+                    System.out.print("Digite a unidade de origem (km, m, mi): ");
                     String origemVelocidade = scanner.nextLine().toLowerCase().trim();
-                    System.out.print("Digite a unidade de destino (km/h, m/s, mph): ");
+                    System.out.print("Digite a unidade de destino (km, m, mi): ");
                     String destinoVelocidade = scanner.nextLine().toLowerCase().trim();
                     System.out.println("Resultado: " + Conversor.converterVelocidade(velocidade, origemVelocidade, destinoVelocidade) + " " + destinoVelocidade);
                     break;
@@ -56,9 +56,9 @@ public class Main {
                     System.out.print("Digite o valor da área: ");
                     double area = scanner.nextDouble();
                     scanner.nextLine();
-                    System.out.print("Digite a unidade de origem (m², ha, km²): ");
+                    System.out.print("Digite a unidade de origem (m, ha, km): ");
                     String origemArea = scanner.nextLine().toLowerCase().trim();
-                    System.out.print("Digite a unidade de destino (m², ha, km²): ");
+                    System.out.print("Digite a unidade de destino (m, ha, km): ");
                     String destinoArea = scanner.nextLine().toLowerCase().trim();
                     System.out.println("Resultado: " + Conversor.converterArea(area, origemArea, destinoArea) + " " + destinoArea);
                     break;
