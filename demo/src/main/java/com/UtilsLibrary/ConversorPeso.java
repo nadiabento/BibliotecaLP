@@ -11,7 +11,7 @@ public class ConversorPeso {
         if (unidadeOrigem.equals(unidadeDestino)) {
             return valor; // Se as unidades forem iguais, retorna o mesmo valor
         }
-
+// 
         double valorEmGramas;
 
         // Converter para gramas primeiro
